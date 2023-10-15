@@ -1,1 +1,1 @@
-# gilrosario-NoSQL-Challenge-Social-Network-API
+# gilr-NoSQL-Challenge-Social-Network-API
