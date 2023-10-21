@@ -1,33 +1,28 @@
 const router = require('express').Router();
+
+// Import functions from thoughtController.js
 const {
-  getAllThoughts,
-  getSingleThought,
-  createThought,
-  updateThought,
-  deleteThought,
-  createReaction,
-  deleteReaction,
+    getThought,
+    getSingleThought,
+    createThought,
+    updateThought,
+    deleteThought,
+    createReaction,
+    deleteReaction
 } = require('../../controllers/thoughtCtlr');
 
-// Get all thoughts
-router.route('/').get(getAllThoughts);
+// Route for handling all thoughts: GET all and POST a new thought
+router.route('/').get(getThought).post(createThought);
 
-// Get a single thought by ID
-router.route('/:thoughtId').get(getSingleThought);
+// Route for handling a single thought by ID: GET one thought, UPDATE, and DELETE by ID
+router.route('/:thoughtId').get(getSingleThought).put(updateThought).delete(deleteThought);
 
-// Create a new thought
-router.route('/').post(createThought);
-
-// Update thought information
-router.route('/:thoughtId').put(updateThought);
-
-// Delete a thought
-router.route('/:thoughtId').delete(deleteThought);
-
-// Create a reaction for a thought
+// Route for adding a new reaction to a thought
 router.route('/:thoughtId/reactions').post(createReaction);
 
-// Delete a reaction from a thought
+// Route for deleting a reaction from a thought by its ID
 router.route('/:thoughtId/reactions/:reactionId').delete(deleteReaction);
 
+// Exports the router for use in the application
 module.exports = router;
+
