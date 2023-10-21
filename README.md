@@ -54,7 +54,7 @@ You can find code repo [here.](https://github.com/grosario1/gilr-NoSQL-Challenge
 - JavaScript
 - npm package manager - https://docs.npmjs.com/cli/v8/commands/npm-install
 - npm mongoose - https://www.npmjs.com/package//mongoose
--
+
 ## Contributing
 The project is open for contributions. If you would like to contribute, create a new branch from the main and add any updates as deemed necessary. If you should find any issues with the code, please open a 'New Issue' from https://github.com/grosario1/gilr-NoSQL-Challenge-Social-Network-API/issues and these request can be review and updated accordingly.
 ## Contact Info
