@@ -1,14 +1,17 @@
+// Import required models
 const { User, Thought } = require("../models");
 
+// Controller for handling thoughts
 const thoughtController = {
   // Get all thoughts
-  async getAllThoughts(req, res) {
+  async getThought(req, res) {
     try {
-      // Retrieve all thoughts from the database
+      // Fetch all thoughts from the database
       const thoughts = await Thought.find();
       return res.status(200).json(thoughts);
     } catch (err) {
-      console.error(err);
+      // Handle errors and return an internal server error
+      console.log(err);
       return res.status(500).json(err);
     }
   },
@@ -25,7 +28,8 @@ const thoughtController = {
 
       return res.status(200).json(thought);
     } catch (err) {
-      console.error(err);
+      // Handle errors and return an internal server error
+      console.log(err);
       return res.status(500).json(err);
     }
   },
@@ -33,7 +37,7 @@ const thoughtController = {
   // Create a new thought
   async createThought(req, res) {
     try {
-      // Create a new thought with the provided data
+      // Create a new thought using the provided data
       const thought = await Thought.create(req.body);
 
       // Add the thought's ID to the user's thoughts array
@@ -43,9 +47,10 @@ const thoughtController = {
         { runValidators: true, new: true }
       );
 
-      return res.status(201).json({ thought, user });
+      return res.status(200).json({ thought, user });
     } catch (err) {
-      console.error(err);
+      // Handle errors and return an internal server error
+      console.log(err);
       return res.status(500).json(err);
     }
   },
@@ -66,7 +71,8 @@ const thoughtController = {
 
       return res.status(200).json(thought);
     } catch (err) {
-      console.error(err);
+      // Handle errors and return an internal server error
+      console.log(err);
       return res.status(500).json(err);
     }
   },
@@ -87,7 +93,8 @@ const thoughtController = {
         message: "Thought & associated reactions successfully deleted",
       });
     } catch (err) {
-      console.error(err);
+      // Handle errors and return an internal server error
+      console.log(err);
       return res.status(500).json(err);
     }
   },
@@ -106,9 +113,10 @@ const thoughtController = {
         return res.status(404).json({ message: "No thought with that ID" });
       }
 
-      return res.status(201).json(reaction);
+      return res.status(200).json(reaction);
     } catch (err) {
-      console.error(err);
+      // Handle errors and return an internal server error
+      console.log(err);
       return res.status(500).json(err);
     }
   },
@@ -131,10 +139,12 @@ const thoughtController = {
 
       return res.status(200).json(reaction);
     } catch (err) {
-      console.error(err);
+      // Handle errors and return an internal server error
+      console.log(err);
       return res.status(500).json(err);
     }
   },
 };
 
+// Export the thought controller for use in routes
 module.exports = thoughtController;
