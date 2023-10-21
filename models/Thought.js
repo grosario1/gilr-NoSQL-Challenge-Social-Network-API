@@ -1,5 +1,5 @@
-const { Schema, model, Types } = require('mongoose');
-const dateFormat = require("../utils/dateFormat");
+const { Schema, model } = require('mongoose');
+const dateFormat = require('../utils/dateFormat');
 
 // Define the schema for reactions
 const ReactionSchema = new Schema(
@@ -36,7 +36,7 @@ const ThoughtSchema = new Schema(
   {
     thoughtText: {
       type: String,
-      required: "Thought is Required",
+      required: 'Thought is Required',
       minlength: 1, // Minimum length of a thought
       maxlength: 280, // Maximum length of a thought
     },
@@ -61,11 +61,11 @@ const ThoughtSchema = new Schema(
 );
 
 // Virtual property to calculate the count of reactions on a thought
-ThoughtSchema.virtual("reactionCount").get(function () {
+ThoughtSchema.virtual('reactionCount').get(function () {
   return this.reactions.length;
 });
 
 // Create the Thought model using the ThoughtSchema
-const Thought = model("Thought", ThoughtSchema);
+const Thought = model('Thought', ThoughtSchema);
 
 module.exports = Thought;

@@ -2,7 +2,7 @@ const router = require('express').Router();
 
 // Import functions from thoughtController.js
 const {
-    getThought,
+    getAllThoughts,
     getSingleThought,
     createThought,
     updateThought,
@@ -12,7 +12,7 @@ const {
 } = require('../../controllers/thoughtCtlr');
 
 // Route for handling all thoughts: GET all and POST a new thought
-router.route('/').get(getThought).post(createThought);
+router.route('/').get(getAllThoughts).post(createThought);
 
 // Route for handling a single thought by ID: GET one thought, UPDATE, and DELETE by ID
 router.route('/:thoughtId').get(getSingleThought).put(updateThought).delete(deleteThought);

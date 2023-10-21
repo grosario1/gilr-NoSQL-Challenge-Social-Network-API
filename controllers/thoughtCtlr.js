@@ -3,23 +3,20 @@ const { User, Thought } = require("../models");
 
 // Controller for handling thoughts
 const thoughtController = {
-  // Get all thoughts
-  async getThought(req, res) {
+  // Retrieve all thoughts
+  async getAllThoughts(req, res) {
     try {
-      // Fetch all thoughts from the database
-      const thoughts = await Thought.find();
-      return res.status(200).json(thoughts);
+      const thought = await Thought.find();
+      return res.status(200).json(thought);
     } catch (err) {
-      // Handle errors and return an internal server error
       console.log(err);
       return res.status(500).json(err);
     }
   },
 
-  // Get a single thought by ID
+  // Retrieve a single thought by its unique identifier
   async getSingleThought(req, res) {
     try {
-      // Find a thought by its unique identifier
       const thought = await Thought.findOne({ _id: req.params.thoughtId });
 
       if (!thought) {
@@ -28,7 +25,6 @@ const thoughtController = {
 
       return res.status(200).json(thought);
     } catch (err) {
-      // Handle errors and return an internal server error
       console.log(err);
       return res.status(500).json(err);
     }
@@ -37,7 +33,6 @@ const thoughtController = {
   // Create a new thought
   async createThought(req, res) {
     try {
-      // Create a new thought using the provided data
       const thought = await Thought.create(req.body);
 
       // Add the thought's ID to the user's thoughts array
@@ -49,7 +44,6 @@ const thoughtController = {
 
       return res.status(200).json({ thought, user });
     } catch (err) {
-      // Handle errors and return an internal server error
       console.log(err);
       return res.status(500).json(err);
     }
@@ -58,7 +52,6 @@ const thoughtController = {
   // Update an existing thought
   async updateThought(req, res) {
     try {
-      // Find and update a thought by its ID
       const thought = await Thought.findOneAndUpdate(
         { _id: req.params.thoughtId },
         { $set: req.body },
@@ -71,16 +64,14 @@ const thoughtController = {
 
       return res.status(200).json(thought);
     } catch (err) {
-      // Handle errors and return an internal server error
       console.log(err);
       return res.status(500).json(err);
     }
   },
 
-  // Delete a thought by ID
+  // Delete a thought by its unique identifier
   async deleteThought(req, res) {
     try {
-      // Find and delete a thought by its unique identifier
       const thought = await Thought.findOneAndDelete({
         _id: req.params.thoughtId,
       });
@@ -93,7 +84,6 @@ const thoughtController = {
         message: "Thought & associated reactions successfully deleted",
       });
     } catch (err) {
-      // Handle errors and return an internal server error
       console.log(err);
       return res.status(500).json(err);
     }
@@ -102,7 +92,6 @@ const thoughtController = {
   // Create a new reaction for a thought
   async createReaction(req, res) {
     try {
-      // Add a new reaction to a thought
       const reaction = await Thought.findOneAndUpdate(
         { _id: req.params.thoughtId },
         { $addToSet: { reactions: req.body } },
@@ -115,16 +104,14 @@ const thoughtController = {
 
       return res.status(200).json(reaction);
     } catch (err) {
-      // Handle errors and return an internal server error
       console.log(err);
       return res.status(500).json(err);
     }
   },
 
-  // Delete a reaction from a thought
+  // Delete a reaction from a thought by matching the reaction's ID
   async deleteReaction(req, res) {
     try {
-      // Remove a reaction from a thought by matching the reaction's ID
       const reaction = await Thought.findOneAndUpdate(
         { _id: req.params.thoughtId },
         { $pull: { reactions: { _id: req.params.reactionId } } },
@@ -139,7 +126,6 @@ const thoughtController = {
 
       return res.status(200).json(reaction);
     } catch (err) {
-      // Handle errors and return an internal server error
       console.log(err);
       return res.status(500).json(err);
     }
