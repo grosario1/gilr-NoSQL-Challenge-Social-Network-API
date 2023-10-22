@@ -40,7 +40,7 @@ First you should clone this repo (https://github.com/grosario1/gilr-NoSQL-Challe
 
 - Screenshot of the http calls via Insomnia:
   
-![Insomnia](./gr-social-network-api(insomnia).jpg)
+![gr-social-network-api(insomnia)](https://github.com/grosario1/gilr-NoSQL-Challenge-Social-Network-API/assets/26330325/622d0019-65f0-49ea-86f6-f0611c656134)
 
 
 Click on [Demo Here]( mp4 ).
