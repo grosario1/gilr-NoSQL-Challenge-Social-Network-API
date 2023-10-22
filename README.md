@@ -26,7 +26,7 @@ First you should clone this repo (https://github.com/grosario1/gilr-NoSQL-Challe
 ## Usage
 
 
-- **Step #1:** Clone this repo (https://github.com/grosario1/gilr-NoSQL-Challenge-Social-Network-API).  e.g. git clone https://github.com/grosario1/gilr-NoSQL-Challenge-Social-Network-API)
+- **Step #1:** Clone this repo (https://github.com/grosario1/gilr-NoSQL-Challenge-Social-Network-API).  e.g. git clone https://github.com/grosario1/gilr-NoSQL-Challenge-Social-Network-API
 
 - **Step #2:** Change directories with command ```cd gilr-NoSQL-Challenge-Social-Network-API```
 
