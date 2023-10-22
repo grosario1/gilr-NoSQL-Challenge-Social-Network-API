@@ -39,8 +39,8 @@ First you should clone this repo (https://github.com/grosario1/gilr-NoSQL-Challe
 - **Step #6:** From directory where you cloned the repo, run `npm run start` from the command line to start the npm app and the app will start listening in your localhost on port 3001.
 
 - Screenshot of the http calls via Insomnia:
-- 
-![Insomnia](./gr-social-network-api(insomnia).jpg)
+  
+![Insomnia](../gilr-NoSQL-Challenge-Social-Network-API/gr-social-network-api(insomnia).jpg)
 
 
 Click on [Demo Here]( mp4 ).
