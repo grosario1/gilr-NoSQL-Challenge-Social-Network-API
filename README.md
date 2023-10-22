@@ -26,21 +26,21 @@ First you should clone this repo (https://github.com/grosario1/gilr-NoSQL-Challe
 ## Usage
 
 
-- **Step #1:** 
+- **Step #1:** Clone this repo (https://github.com/grosario1/gilr-NoSQL-Challenge-Social-Network-API).  e.g. git clone https://github.com/grosario1/gilr-NoSQL-Challenge-Social-Network-API)
 
-- **Step #2:** 
+- **Step #2:** Change directories with command ```cd gilr-NoSQL-Challenge-Social-Network-API```
 
-- **Step #3:** 
+- **Step #3:** Run command ```npm init -y```
 
-- **Step #4:**
+- **Step #4:** Run command ```npm i```
 
-
-- **Step $5:** 
+- **Step $5:** Run command ```npm install mongoose```
 
 - **Step #6:** From directory where you cloned the repo, run `npm run start` from the command line to start the npm app and the app will start listening in your localhost on port 3001.
 
 - Screenshot of the http calls via Insomnia:
-
+- 
+![Insomnia](./gr-social-network-api(insomnia).jpg)
 
 
 Click on [Demo Here]( mp4 ).
